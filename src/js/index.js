@@ -4,6 +4,22 @@ let currentProduct = 0;
 
 const products = [
   {
+    name: "Сёрфборд Olaian Foam 500 c 3 плавниками",
+    description:
+      "Разработан нашей командой энтузиастов серфинга для детей, которые только начинают чувствовать себя уверенно на волнах. Может также использоваться легкими, продвинутыми взрослыми.",
+    features: "Этот пока скрыт",
+    rating: 4,
+    votes: 25,
+    price: 49000,
+    images: [
+      "./src/img/product.png",
+      "./src/img/preview4.png",
+      "./src/img/preview2.png",
+      "./src/img/preview3.png",
+      "./src/img/preview1.png",
+    ],
+  },
+  {
     name: "Сёрфборд OceanRider — Aqua Vortex Pro-V1",
     description:
       "Динамичный шортборд с гипнотическим этническим орнаментом морских волн. Создан для сёрферов, ценящих глубокую связь с океаном, быстрый разгон на гребне и идеальный контроль над траекторией скольжения.",
@@ -98,6 +114,7 @@ const description = document.querySelector("#descriptionTab");
 const features = document.querySelector("#featuresTab");
 const votes = document.querySelector(".hero .productCard .rating small");
 const price = document.querySelector(".hero .productCard .commercial .price");
+const productCounter = document.querySelector(".productCounter");
 
 const picture = document.querySelector(".hero .productCard .picture img");
 const previewPictures = document.querySelector(
@@ -138,6 +155,7 @@ window.getVoicesText = function (
 };
 
 window.setValues = function () {
+  productCounter.innerText = `${currentProduct + 1}/${products.length}`;
   productName.innerText = products[currentProduct].name;
   description.innerText = products[currentProduct].description;
   features.innerText = products[currentProduct].features;
